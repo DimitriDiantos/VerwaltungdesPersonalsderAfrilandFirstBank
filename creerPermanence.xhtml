@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+   
+   <h:head>
+   	<title>Permanence</title>
+   	
+   	   </h:head>
+   <h:body>
+  						<ui:include src="/acceuil.xhtml" />
+  <div >
+  <h:form>
+    <p:panel header="Creer un Planning">
+        <p:messages />
+ 
+        <h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+            <p:outputLabel for="@next" value="Code: " />
+            <p:inputText value="#{profilView.code}" label="Code"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{profilView.code}" />
+
+			<p:outputLabel for="@next" value="Selection un coordonnateur:"/>
+            <p:selectOneMenu id="Coordonnateur" action="#{profilView.affecter}">
+       		<f:selectItem itemLabel="" itemValue=""/>
+      	    <f:selectItem itemLabel="1" itemValue="1"/>
+      	    <f:selectItem itemLabel="2" itemValue="2"/>
+      	    <f:selectItem itemLabel="3" itemValue="3"/>
+      	    <f:selectItem itemLabel="4" itemValue="4"/>
+            </p:selectOneMenu>
+           
+			
+       		<p:outputLabel for="@next" value="Debut:"/>
+       		<p:calendar value="#{calendarManagedBean.date}" showOn="button"></p:calendar>
+       		
+       		<p:outputLabel for="@next" value="Fin:"/>
+       		<p:calendar value="#{calendarManagedBean.date}" showOn="button"></p:calendar>
+        
+            </h:panelGrid> 
+        <p:commandButton value="Enregistrer"  validateClient="true"/>
+        <p:commandButton value="Annuler"  validateClient="true"/>
+    </p:panel>
+</h:form>
+</div>
+
+	
+      </h:body>
+</HTML>

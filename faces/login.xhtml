@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+xmlns:p="http://primefaces.org/ui"
+ xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+   	
+   	 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <title>Connexion</title>
+    <style type="text/css">
+        .btnWidth {
+            width: 80px;
+        }     
+    </style>
+   </h:head >
+   <h:body style="background-color:#ee3232">
+   	<h:form >
+   	<p:messages  globalOnly="true" infoClass="info" />
+       <p:fieldset  style="margin:0px 400px 0px 400px">
+        
+       	
+        
+        <br/>
+        <br/>
+       	<br/>
+       	<p:outputLabel>Nom d'utilisateur <span class="requis">*</span> </p:outputLabel>
+       	<p:inputText id="email" required="true" feedback="true" requiredMessage="le champ est vide" size="20" maxlength="60">
+       	<p:message id="mail" for="email" errorClass="erreur" label="l'email" />
+       	 </p:inputText>
+       	<br/><br/>
+       	<p:outputLabel> Mot de passe<span class="requis">*</span> </p:outputLabel>
+       	<p:password  id="password" feedback="true" required="true" requiredMessage="le champ est vide"
+       	  size="20" maxlength="20">
+       	<p:message id="motDePasseMessage" for="password" errorClass="erreur" label="Mot de passe" />
+       	</p:password>
+       	<br/>
+       	<br/>
+       	<br/>
+       	<h:commandButton value="Connecter"  />
+       </p:fieldset>
+   	</h:form>
+   </h:body>
+</HTML>

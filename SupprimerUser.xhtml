@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="fr" 
+	xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets"> 
+   <h:head> 
+      <title>Liste des Transactions existants</title> 
+   </h:head> 
+   <h:body> 
+      <ui:include src="/acceuil.xhtml" />
+      <div>
+   		<h:form>
+   		<p:inputText style="margin:1px 10px 1px 1px;" placeholder="Entrez un nom"/>
+          <p:commandButton type="button" value="Rechercher"  />
+		   	 <p:fieldset legend="Liste des Utilisateurs existantes">	
+		       <p:dataTable var="utilisateur" value="#{listUserManagedBean.listUser}">
+			    <p:column headerText="Id">
+			        <h:outputText value="#{utilisateur.id}" filterBy="#{utilisateur.id}" filterMatchMode="contains"/>
+			    </p:column>
+			 
+			    <p:column headerText="Nom">
+			        <h:outputText value="#{utilisateur.nom}" filterBy="#{utilisateur.nom}" filterMatchMode="contains" />
+			    </p:column>
+			 
+			    <p:column headerText="Mot De Passe">
+			        <h:outputText value="#{utilisateur.motDePasse}" />
+			    </p:column>
+			 
+			    <p:column headerText="Telephone">
+			        <h:outputText value="#{utilisateur.telephone}" filterBy="#{utilisateur.telephone}" filterMatchMode="contains"/>
+			    </p:column>
+			    
+			     <p:column headerText="Email">
+			        <h:outputText value="#{utilisateur.email}" filterBy="#{utilisateur.email}" filterMatchMode="contains"/>
+			    </p:column>
+			    
+			     <p:column headerText="Nombre de Permanance">
+			        <h:outputText value="#{utilisateur.nbPermanence}" filterBy="#{utilisateur.nbPermanence}" filterMatchMode="contains"/>
+			    </p:column>
+			    
+			     <p:column headerText="Profil">
+			        <h:outputText value="#{utilisateur.profil}" filterBy="#{utilisateur.profil}" filterMatchMode="contains"/>
+			    </p:column>
+			    
+			     <p:column headerText="Departement">
+			        <h:outputText value="#{utilisateur.departement}" filterBy="#{utilisateur.departement}" filterMatchMode="contains"/>
+			    </p:column>
+			    
+			  <p:column headerText="Details">
+			  	<h:commandButton action="#{listUserManagedBean.DetailUser(utilisateur)}" value="Détails" /></p:column> 
+            <p:column headerText="Editer">
+            <h:commandButton action="#{listUserManagedBean.EditUser(utilisateur)}" value="Modifier" /></p:column> 
+               <p:column headerText="Supprimer">
+           <h:commandButton action="#{listUserManagedBean.SupprimerUser(utilisateur)}" value="Supprimer" /></p:column> 
+				</p:dataTable>
+			</p:fieldset>
+		</h:form>
+	 </div>
+   </h:body> 
+</html> 

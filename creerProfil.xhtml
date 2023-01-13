@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://xmlns.jcp.org/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+   
+   <h:head>
+   	<title>Profil</title>
+   	   </h:head>
+   <h:body>
+  						<ui:include src="/acceuil.xhtml" />
+  <div >
+  <h:form>
+     <!--  <p:graphicImage value="/images/afl.jpg" style="margin-left: 720px"/> -->
+    <p:panel header="Creer un utilisateur">
+        <p:messages />
+ 
+        <h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+            <p:outputLabel for="@next" value="Id: " />
+            <p:inputText value="#{userManagedBean.utilisateur.id}" label="Id"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.id}" />
+ 
+            <p:outputLabel for="@next" value="Nom: " />
+            <p:inputText value="#{userManagedBean.utilisateur.nom}" label="Nom"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.nom}" />
+            
+            <p:outputLabel for="@next" value="Mot de passe: " />
+            <p:inputText value="#{userManagedBean.utilisateur.motDePasse}" label="Mot de passe"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.motDePasse}" />
+            
+             <p:outputLabel for="@next" value="Telephone: " />
+            <p:inputText value="#{userManagedBean.utilisateur.telephone}" label="Telephone"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.telephone}" />
+             
+             <p:outputLabel for="@next" value="Email: " />
+            <p:inputText value="#{userManagedBean.utilisateur.email}" label="Email"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.email}" />
+            
+            
+             <p:outputLabel for="@next" value="Nombre de permanence : " />
+            <p:inputText value="#{userManagedBean.utilisateur.nbPermanence}" label="Nombre de permanence"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{userManagedBean.utilisateur.nbPermanence}" />
+ 
+			
+          
+          			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel for="prof" value="Profil:" />
+        <p:selectOneMenu id="prof" value="#{userManagedBean.utilisateur.profil}" style="width:125px">
+            <f:selectItem itemLabel="Administrateur" itemValue="Administrateur" />
+            <f:selectItem itemLabel="Coordonnateur" itemValue="Coordonnateur" />
+            <f:selectItem itemLabel="Ressource" itemValue="Ressource" />
+         </p:selectOneMenu>
+       		</h:panelGrid>
+          
+          
+          
+          
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel for="console" value="Departement:" />
+        <p:selectOneMenu id="console" value="#{userManagedBean.utilisateur.departement}" style="width:125px">
+            <f:selectItem itemLabel="Digital Banking" itemValue="Digital Banking" />
+            <f:selectItem itemLabel="Exploitation" itemValue="Exploitation" />
+            <f:selectItem itemLabel="Maintenance" itemValue="Maintenance" />
+            <f:selectItem itemLabel="Plateforme Collaborative" itemValue="Plateforme Collaborative" />
+            <f:selectItem itemLabel="Projet Developpement" itemValue="Projet Developpement" />
+            <f:selectItem itemLabel="Support Utilisateur" itemValue="Support Utilisateur" />
+         </p:selectOneMenu>
+       		</h:panelGrid>
+        
+            </h:panelGrid> 
+        <h:commandButton value="Enregistrer"  validateClient="true" action="#{userManagedBean.Enregistrer()}"/>
+        <p:commandButton value="Annuler"  validateClient="true"/>
+    </p:panel>
+</h:form>
+</div>
+
+
+	
+      </h:body>
+      <div style="margin-bottom:10px">
+  <footer >
+       <p>© 2019 Copy Right</p>
+    </footer>
+    </div>
+</HTML>

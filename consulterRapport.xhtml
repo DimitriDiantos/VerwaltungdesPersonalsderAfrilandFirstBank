@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+   
+   <h:head>
+   	<title>Consulter Rapport</title>
+   	   </h:head>
+   <h:body>
+  						<ui:include src="/acceuil.xhtml" />
+  						
+  		<div>
+  			<h:form>
+  				<p:panel header="Consulter Profil">
+  			
+           		 <p:inputText style="margin-right:10px;" placeholder="Entrez un nom"/>
+           		 <p:commandButton type="button" value="Rechercher"  />
+        	
+        	<p:dataTable var="Rapport" value="#">
+    			<p:column headerText="Code">
+      		    	<h:outputText value="#{rapport.code}" />
+    			</p:column>
+ 
+ 			   <p:column headerText="Rapport">
+			        <h:outputText value="#{rapport.rapport}" />
+			    </p:column>
+ 
+			    <p:column headerText="Date">
+			        <h:outputText value="#{rapport.date}" />
+			    </p:column>
+ 
+			    <p:column headerText="Ressource">
+			        <h:outputText value="#{rapport.ressource}" />
+			    </p:column>
+			</p:dataTable>
+        	
+        	
+  				</p:panel>
+  			
+  			</h:form>
+  		
+  		
+  		</div>		
+  						
+  						
+  
+      </h:body>
+</HTML>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+   	<title>Acceuil</title>
+   <div>
+   	 <H1>
+   		
+   		<FONT style="vertical-align: inherit;">
+   		<p:graphicImage value="/images/afriland.png"   height="35px"
+                         style="float:right" />
+   <center><marquee> Bienvenue sur l'application de gestion de la permanence </marquee></center>
+   </FONT> 
+   		
+  	 </H1>
+  	 
+  <h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+    	<p:submenu label="Acceuil" url="/acceuil.xhtml" value="Acceuil" >
+    		<p:menuitem value="Acceuil" url="/acceuil.xhtml"/>
+    	</p:submenu>
+    
+        <p:submenu label="Gestion des utilisateurs" >
+            <p:submenu label="Profil" >
+                <p:menuitem value="Creer profil" url="/creerProfil.xhtml" />
+                <p:menuitem value="Consulter" url="/listeUtilisateur.xhtml" />
+            </p:submenu>
+            <p:submenu label="Departement" >
+                <p:menuitem value="Creer" url="/creerDepartement.xhtml" />
+                <p:menuitem value="Consulter" url="/ListDepartement.xhtml" />
+            </p:submenu>
+       
+            <p:submenu label="Permanence" >
+                <p:menuitem value="Creer une permanence" url="/creerPermanence.xhtml" />
+                <p:menuitem value="Consulter" url="#" />
+            </p:submenu>
+            <p:menuitem value="Permutation" url="#" />
+            
+        </p:submenu>
+ 
+        <p:submenu label="Gestion des primes" >
+            <p:menuitem value="Consulter" url="#"  />
+            <p:menuitem value="Parametrer" url="#"  />
+        </p:submenu>
+ 
+        <p:submenu label="Gestion des rapports" >
+            <p:menuitem value="Creer" url="/creerRapport.xhtml" />
+            <p:menuitem value="Consulter" url="/consulterRapport.xhtml" /> 
+        </p:submenu>
+ 
+      
+ 
+        <p:menuitem value="Annuaire" url="http://www.google.com"  />
+ 
+        <f:facet name="options">
+            
+            <h:commandButton type="button" value="Se déconnecter"  action="/authentification.xhtml"/>
+        </f:facet>
+    </p:menubar>
+</h:form>
+
+  	</div>
+  	
+   	   </h:head>
+   <h:body>
+   	
+   	
+
+			
+    </h:body>
+    
+</HTML>

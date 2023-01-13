@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="fr" 
+	xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets"> 
+   <h:head> 
+      <title>Liste des departement existants</title> 
+   </h:head> 
+   <h:body> 
+      <ui:include src="/acceuil.xhtml" />
+   		<h:form>
+		   	 <p:fieldset legend="Liste des Departements existantes">	
+		       <p:dataTable var="departement" value="#{listDepartementManagedBean.listeDepart}"
+		       	emptyMessage="Pas de département trouvé" >
+			    <p:column headerText="Id du Departement" filterBy="#{departement.idD}" filterMatchMode="contains">
+			        <h:outputText value="#{departement.idD}" />
+			    </p:column>
+			 
+			    <p:column headerText="Nom du Departement" filterBy="#{departement.nomD}" filterMatchMode="contains">
+			        <h:outputText value="#{departement.nomD}" />
+			    </p:column>
+			 
+			    <p:column headerText="Chef de Depratement" filterBy="#{departement.chefD}" filterMatchMode="contains">
+			        <h:outputText value="#{departement.chefD}" />
+			    </p:column>
+			    
+			  <p:column headerText="Details">
+			  	<h:commandButton action="#{listDepartementManagedBean.DetailDepartement(departement)}" value="Détails" />
+			  	</p:column> 
+            <p:column headerText="Editer">
+            <h:commandButton action="#{listDepartementManagedBean.EditDepartement(departement)}" value="Modifier" />
+            </p:column> 
+				</p:dataTable>
+			</p:fieldset>
+		</h:form>
+   </h:body> 
+</html> 

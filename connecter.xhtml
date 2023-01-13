@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+xmlns:p="http://primefaces.org/ui"
+ xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+   <f:loadBundle basename="cm.afriland.bundle.messages"  var="msg"/>
+   	<title>User</title>
+   </h:head>
+   <h:body>
+   <h1><marquee> BIENVENUE </marquee></h1>
+    <center>
+   	<h:form>
+   	<p:messages  globalOnly="true" infoClass="info" />
+       <p:fieldset legend="connexion">
+        
+        <br/>
+        <br/>
+       	<br/>
+       	<p:outputLabel>Adresse Email <span class="requis">*</span> </p:outputLabel>
+       	<p:inputText id="email" value="#{userManagedBean.utilisateur.email}" required="true" feedback="true" requiredMessage="#{msg['inscription.email']}" size="20" maxlength="60">
+       	<p:message id="mail" for="email" errorClass="erreur" label="l'email" />
+       	 </p:inputText>
+       	<br/><br/>
+       	<p:outputLabel> password<span class="requis">*</span> </p:outputLabel>
+       	<p:password  id="password" value="#{userManagedBean.utilisateur.motDePasse}" feedback="true" required="true" requiredMessage="#{msg['inscription.password']}"
+       	  size="20" maxlength="20">
+       	<p:message id="motDePasseMessage" for="password" errorClass="erreur" label="Mot de passe" />
+       	</p:password>
+       	<br/>
+       	<br/>
+       	<br/><br/>
+       	<br/>
+       	<h:commandButton value="enregistrer" action="#{userManagedBean.connecterUser()}"/>
+       </p:fieldset>
+   	</h:form>
+   	</center>
+   </h:body>
+</HTML>

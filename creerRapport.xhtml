@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+   
+   <h:head>
+   	<title>Rapport</title>
+   	   </h:head>
+   <h:body>
+  						<ui:include src="/acceuil.xhtml" />
+  <div >
+  <h:form>
+    <p:panel header="Creer un rapport">
+        <h3 style="margin-top:50">Rapport de permanence</h3>
+    <p:textEditor widgetVar="editor1" value="#{creerRapportView.text}" height="300" style="margin-bottom:10px"/>
+     
+   
+     
+    <p:dialog header="" widgetVar="dlg" showEffect="fade" hideEffect="fade">
+        <p:outputPanel id="display">
+            <h3 style="margin-top:0">Rapport enregistré</h3>
+            <h:outputText value="#{creerRapportView.text}" escape="false" />
+ 
+        </p:outputPanel>
+    </p:dialog>  
+           
+        <p:commandButton value="Enregistrer"  update="display" oncomplete="PF('dlg').show()" validateClient="true"/>
+        <p:commandButton value="Annuler"  type="button"  validateClient="true"/>
+    </p:panel>
+</h:form>
+</div>
+
+
+	
+      </h:body>
+</HTML>

@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="fr" 
+	xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets"> 
+   <h:head> 
+      <title>Editer Un Utilisateur</title> 
+   </h:head> 
+   <h:body> 
+   <ui:include src="/acceuil.xhtml" />
+       <h:form>
+       <p:fieldset legend="Editer un utilisateur">
+       
+       <p:outputLabel>Id de l'utilisateur :</p:outputLabel>
+	   <p:inputText value="#{listUserManagedBean.utilisateur.id}" validatorMessage="Errreur de ibi"/>
+	     
+	    <p:outputLabel>Nom :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.nom}"/><br/>
+	    
+	     <p:outputLabel>Mot de Passe :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.motDePasse}"/><br/>
+	    
+	     <p:outputLabel>Telephone :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.telephone}"/><br/>
+	    
+	     <p:outputLabel>Email :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.email}"/><br/>
+	    
+	    <p:outputLabel>Nombre de Permanence :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.nbPermanence}"/><br/>
+	    
+	    
+	    <p:outputLabel>Profil :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.profil}"/><br/>
+	    
+	    <p:outputLabel>Depratement :</p:outputLabel>
+	    <p:inputText value="#{listUserManagedBean.utilisateur.departement}"/><br/>
+         <br/><br/>
+    
+         
+        <h:commandButton value="Modifier" action="#{listUserManagedBean.ModifierUser}"/>
+        <h:commandButton value="Annuler" action="#{listUserManagedBean.Ok}"/>
+   
+     </p:fieldset>
+     </h:form> 
+   </h:body> 
+</html>

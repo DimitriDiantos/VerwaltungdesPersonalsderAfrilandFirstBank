@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<HTML lang="fr"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:f="http://java.sun.com/jsf/core" 
+   xmlns:h="http://java.sun.com/jsf/html" 
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <h:head>
+   	<title>Acceuil</title>
+   	<style type="text/css" title="classes">>
+   	*.jaune{color: green;}
+   	div.jaune {color: yellow;}
+   	.classe1 {color: red;}
+   	.classe2 {font-style: italic}
+   	.classe3 {background-color: #CCC;}
+   	</style>
+   	   </h:head>
+   <h:body>
+ <nav> 
+ <div>
+  <h:form>
+    <p:growl id="messages" showDetail="false"/>
+    
+    <p:menu>
+        <p:submenu label="Gestion des Ressources">
+            <p:menuitem value="Profil" action="#{acceuilMenuView.profil}"  />
+            <p:menuitem value="Departement" action="#{acceuilMenuView.departement}" />
+             <p:menuitem value="Equipe" action="#{acceuilMenuView.equipe}"/>
+              <p:menuitem value="Permanence" action="#{acceuilMenuView.permanence}"/>
+               <p:menuitem value="Planning" action="#{acceuilMenuView.planning}" />
+                <p:menuitem value="Permutation" action="#{acceuilMenuView.permutation}" />
+        </p:submenu>
+        <p:submenu label="Gestion des Primes">
+            <p:menuitem value="Consulter" action="#{acceuilMenuView.consulter}" />
+        </p:submenu>
+        <p:submenu label="Gestion des Rapports">
+            <p:menuitem value="Creer" action="#{acceuilMenuView.creer}" />
+            <p:menuitem value="Consulter" action="#{acceuilMenuView.conulter2}" />
+        </p:submenu>
+    </p:menu>
+    
+       <p:growl id="msgs" showDetail="true" />
+ 
+    <p:panel id="AddUser" header="Ajouter un nouvel utilisateur"  style="margin-bottom:20px">
+        <p:panel header="Nouveau Profil">
+        <p:messages />
+ 
+        <h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+            <p:outputLabel for="@next" value="Code: " />
+            <p:inputText value="#{profilView.code}" label="Code"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{profilView.code}" />
+ 
+            <p:outputLabel for="@next" value="Nom: " />
+            <p:inputText value="#{profilView.nom}" label="Nom"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{profilView.nom}" />
+ 
+            <p:outputLabel for="@next" value="Identifiant: " />
+            <p:inputText value="#{profilView.identifiant}" label="Identifiant"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{profilView.identifiant}" />
+ 
+            <p:outputLabel for="@next" value="Mot de passe: " />
+            <p:inputText value="#{profilView.motDePasse}" label="Mot de passe"/>
+            <p:message for="@previous" />
+            <h:outputText value="#{profilView.motDePasse}" />
+ 
+             
+            <p:outputLabel for="@next" value="Profil:"/>
+            <p:selectOneRadio value="#{profilView.profil}">
+                <f:selectItem itemValue="#{administrateur}" itemLabel="Administrateur"/>
+                <f:selectItem itemValue="#{coordonnateur}" itemLabel="Coordonnateur"/>
+                <f:selectItem itemValue="#{ressource}" itemLabel="Ressource"/>
+            </p:selectOneRadio>
+            </h:panelGrid>
+            
+            <h:panelGrid>
+            <p:growl id="messages" />
+ 		
+        <p:outputLabel for="departement" value="Departement:" />
+       		<p:splitButton id="departement" value="Affecter" action="#{profilView.affecter}" >
+           <p:menuitem value="Digital Banking" action="#{profilView.digitalBanking}" />
+           <p:separator/>
+            <p:menuitem value="Exploitation" action="#{profilView.exploitation}"/>
+            <p:separator/>
+            <p:menuitem value="Maintenance" action="#{profilView.maintenance}" />
+            <p:separator/>
+            <p:menuitem value="Plateforme Collaborative" action="#{profilView.plateformeCollaborative}" />
+            <p:separator/>
+            <p:menuitem value="Projet Developpement" action="#{profilView.projetDeveloppement}" />
+            <p:separator/>
+            <p:menuitem value="Support Utilisateur" action="#{profilView.supportUtilisateur}" />
+    </p:splitButton>  
+            
+            
+           </h:panelGrid> 
+        <p:commandButton value="Enregistrer"  validateClient="true"/>
+    </p:panel>
+      
+    </p:panel>
+    </h:form>
+   </div> </nav> 
+    </h:body>
+</HTML>
