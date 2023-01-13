@@ -1,0 +1,12 @@
+Erstellung einer Web-Anwendung zur Verwaltung des Personals der Afriland First Bank
+Programmiersprache: Java Edition Enterprise
+Entwicklungsumgebung: Spring Tool Suite
+Anwendungsserver: Glassfish
+Framework: JSF (Primeface)
+Datenbank: Maria DB
+Beschreibungssprache: Xhtml
+Metasprache: XML und Sprachstil: CSS
+Entwurfsmodell: MVC (Model View Controller)
+API: (JPA) Java Persistence API
+Komponenten-Softwarearchitektur: EJB
+Design und Modellierung: UML
